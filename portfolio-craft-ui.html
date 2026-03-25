@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘杨的数字花园 - 职业历程</title>
+    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Nunito:wght@400;600;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --text-color: #2c3e50;
+            --primary-color: #e67e22;
+            --secondary-color: #27ae60;
+            --accent-color: #8e44ad;
+            --border-color: #34495e;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+            /* 纸张噪点纹理 */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 手写体标题 */
+        h1, h2, h3 {
+            font-family: 'Zhi Mang Xing', cursive;
+            color: var(--text-color);
+            margin-top: 0;
+            letter-spacing: 2px;
+        }
+
+        /* 顶部 Hero 区域 */
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.05);
+        }
+
+        .hero p.subtitle {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.8rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* 手绘风卡片 (Wobble) */
+        .craft-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .craft-card:hover {
+            transform: translateY(-3px) rotate(0.5deg);
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+        }
+
+        /* 胶带效果 (Washi Tape) */
+        .washi-tape {
+            position: absolute;
+            width: 120px;
+            height: 30px;
+            background-color: rgba(230, 126, 34, 0.3);
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            backdrop-filter: blur(2px);
+            border: 1px dashed rgba(230, 126, 34, 0.5);
+            z-index: 10;
+        }
+
+        .washi-tape.green { background-color: rgba(39, 174, 96, 0.2); border-color: rgba(39, 174, 96, 0.4); transform: translateX(-50%) rotate(2deg); }
+        .washi-tape.purple { background-color: rgba(142, 68, 173, 0.2); border-color: rgba(142, 68, 173, 0.4); transform: translateX(-50%) rotate(-1deg); }
+        .washi-tape.blue { background-color: rgba(41, 128, 185, 0.2); border-color: rgba(41, 128, 185, 0.4); transform: translateX(-50%) rotate(3deg); }
+
+        /* 高亮标注 (Notation) */
+        .highlight {
+            background: linear-gradient(104deg, rgba(255,250,150,0) 0.9%, rgba(255,250,150,1) 2.4%, rgba(255,250,150,0.5) 5.8%, rgba(255,250,150,0.1) 93%, rgba(255,250,150,0.7) 96%, rgba(255,250,150,0) 98%), linear-gradient(183deg, rgba(255,250,150,0) 0%, rgba(255,250,150,0.3) 7.9%, rgba(255,250,150,0) 15%);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* 波浪线 (Squiggly Line) */
+        .squiggly {
+            text-decoration: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%23e74c3c' stroke-width='1.5' d='M0 3.5c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            background-position: bottom;
+            padding-bottom: 4px;
+        }
+
+        /* 历程时间轴 (Journey Timeline) */
+        .journey-timeline {
+            position: relative;
+            padding-left: 40px;
+            margin-top: 40px;
+        }
+
+        /* 手绘风垂直虚线 */
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-image: linear-gradient(to bottom, var(--border-color) 50%, transparent 50%);
+            background-size: 4px 16px;
+            background-repeat: repeat-y;
+        }
+
+        .journey-node {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        /* 时间轴节点图标 */
+        .journey-node::before {
+            content: '📍';
+            position: absolute;
+            left: -42px;
+            top: 5px;
+            font-size: 1.2rem;
+            background: var(--bg-color);
+            padding: 2px;
+        }
+
+        .journey-year {
+            font-family: 'Zhi Mang Xing', cursive;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            display: inline-block;
+            border-bottom: 2px solid var(--primary-color);
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+        }
+
+        .journey-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* 标签 */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 20px 5px 20px 5px / 5px 20px 5px 20px;
+            font-weight: bold;
+            background: rgba(255,255,255,0.7);
+        }
+
+        /* 涂鸦装饰 */
+        .doodle {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+        .doodle-1 { right: 10%; top: 20%; transform: rotate(15deg); }
+        .doodle-2 { left: 5%; top: 40%; transform: rotate(-20deg); }
+        .doodle-3 { right: 5%; bottom: 10%; transform: rotate(10deg); }
+
+        .contact-links .contact-item {
+            display: inline-block;
+            margin: 0 10px;
+            color: var(--text-color);
+            font-weight: bold;
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 2px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="doodle doodle-1">🚀</div>
+<div class="doodle doodle-2">💡</div>
+<div class="doodle doodle-3">✨</div>
+
+<div class="container">
+    
+    <!-- Hero 区域 -->
+    <div class="hero">
+        <h1>刘 杨</h1>
+        <p class="subtitle">10年代码匠人 ➔ AI全栈指挥官</p>
+        <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;">
+            你好！我是一名热爱折腾新技术的开发者。从早期的 iOS 原生开发，到主导千万级营收的跨平台前端架构，再到现在全面拥抱 <span class="highlight">AI Native 工作流</span>。在这里，记录着我一路打怪升级的旅程。
+        </p>
+        <div class="contact-links" style="margin-top: 20px;">
+            <span class="contact-item">📧 liuyang86247683@sina.com</span>
+            <span class="contact-item">📱 18617150402</span>
+            <span class="contact-item">📍 深圳·南山区</span>
+        </div>
+    </div>
+
+    <!-- 核心技能卡片 -->
+    <div class="craft-card">
+        <div class="washi-tape"></div>
+        <h2 style="font-size: 2.2rem; text-align: center;">🛠️ 当前技能栈 (Arsenal)</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 20px;">不再局限于特定语言，而是用 AI 赋能全栈</p>
+        
+        <div class="tags" style="justify-content: center;">
+            <span class="tag" style="background: #e8f4f8; border-color: #3498db; color: #2980b9;">🤖 Cursor / Claude 深度应用</span>
+            <span class="tag" style="background: #e8f4f8; border-color: #3498db; color: #2980b9;">🔌 MCP 协议集成开发</span>
+            <span class="tag" style="background: #e8f4f8; border-color: #3498db; color: #2980b9;">🧠 Agentic Workflows</span>
+            <span class="tag" style="background: #fcf3cf; border-color: #f1c40f; color: #d4ac0d;">⚛️ React / Next.js / React Native</span>
+            <span class="tag" style="background: #fcf3cf; border-color: #f1c40f; color: #d4ac0d;">🎨 Craft UI / TailwindCSS</span>
+            <span class="tag" style="background: #eafaf1; border-color: #2ecc71; color: #27ae60;">🐍 Node.js / Python</span>
+            <span class="tag" style="background: #f9ebea; border-color: #e74c3c; color: #c0392b;">🍎 iOS (Swift/Obj-C) 底层经验</span>
+        </div>
+    </div>
+
+    <h2 style="font-size: 2.8rem; text-align: center; margin-top: 60px; margin-bottom: 30px;">🗺️ 我的职业历程 (Journey)</h2>
+
+    <div class="journey-timeline">
+        
+        <!-- 阶段 4：AI 全栈时代 -->
+        <div class="journey-node">
+            <div class="craft-card" style="margin-bottom: 0;">
+                <div class="washi-tape purple"></div>
+                <div class="journey-year">2024 - 至今</div>
+                <div class="journey-title">觉醒：AI 全栈与智能体指挥官</div>
+                <p>随着大模型的爆发，我意识到编程的范式正在发生根本性改变。我开始将工作流全面迁移至 <span class="highlight">Cursor 和 Claude</span>。</p>
+                <ul>
+                    <li><strong>突破边界：</strong> 从纯前端/客户端，借助 AI 的力量快速拓展至 Node.js、Python 等后端领域，实现真正的全栈独立开发。</li>
+                    <li><strong>MCP 协议实践：</strong> 编写自定义的 <span class="squiggly">Model Context Protocol (MCP) Server</span>，让 AI 直接读取本地数据库、操作 Figma 设计稿、执行自动化脚本。</li>
+                    <li><strong>团队赋能：</strong> 在团队内推行 AI 辅助编程规范，将日常开发效率提升数倍。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 阶段 3：前端架构与团队管理 -->
+        <div class="journey-node">
+            <div class="craft-card" style="margin-bottom: 0;">
+                <div class="washi-tape green"></div>
+                <div class="journey-year">2021 - 2024</div>
+                <div class="journey-title">深耕：前端组长 @ 深圳闪回科技</div>
+                <p>承担公司所有 App 和小程序的架构建设，作为一级部门负责人，管理 7 人前端团队。</p>
+                <ul>
+                    <li>主导开发「闪回门店系统」，使用 <strong>React Native + TypeScript</strong>，承载公司线下 80% 的回收额度（平均季度 2 亿 RMB），日活 12 万，崩溃率控制在 0.06%。</li>
+                    <li>负责 4 个 App 和 5 个小程序的从 0 到 1 架构设计、通用组件抽离与性能优化。</li>
+                    <li>制定前端代码规范，组织技术分享，建立完善的工程化体系。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 阶段 2：跨平台与性能优化 -->
+        <div class="journey-node">
+            <div class="craft-card" style="margin-bottom: 0;">
+                <div class="washi-tape blue"></div>
+                <div class="journey-year">2019 - 2021</div>
+                <div class="journey-title">蜕变：App组长 @ 联合信通</div>
+                <p>从单纯的执行者向架构设计和团队管理转型。负责「至优出行」（新能源智慧出行平台）的 iOS 端架构重构。</p>
+                <ul>
+                    <li>使用 Objective-C + Swift 混合开发，重构首页、用户、订单、支付等核心模块。</li>
+                    <li>深度优化性能：通过修改首页地图网点渲染逻辑，<span class="squiggly">使整体性能提升 20%</span>；优化资源库使安装包减小 5MB。</li>
+                    <li>带领 10 人 App 团队，把控项目进度与代码质量。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 阶段 1：iOS 原生基石 -->
+        <div class="journey-node">
+            <div class="craft-card" style="margin-bottom: 0;">
+                <div class="washi-tape"></div>
+                <div class="journey-year">2013 - 2018</div>
+                <div class="journey-title">基石：iOS 开发老兵</div>
+                <p>职业生涯的前 5 年，我扎根于 iOS 原生开发，积累了深厚的底层技术功底。</p>
+                <ul>
+                    <li><strong>汉资投资 (2017-2018)：</strong> 独立完成海外智能香薰机项目，深入研究 BLE 蓝牙通信、DLNA 协议、GCDAsyncSocket。甚至在本地开启 WebService 服务器作为 DLNA Service 端。</li>
+                    <li><strong>广田云万家 / 科蓝软件 (2013-2017)：</strong> 参与平安银行等多个大型 App 的日常开发与维护，熟练掌握 CoreData、FMDB、Realm 等存储机制及各类设计模式。</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="craft-card">
+        <div class="washi-tape"></div>
+        <h2 style="font-size: 2.1rem; text-align: center;">📮 联系我 (Contact)</h2>
+        <p style="text-align: center; margin-bottom: 10px;">
+            期待全职机会、外包合作、技术交流，欢迎随时联系。
+        </p>
+        <p style="text-align: center; margin: 0;">
+            <strong>电话：</strong>18617150402 | <strong>邮箱：</strong>liuyang86247683@sina.com
+        </p>
+        <p style="text-align: center; margin: 6px 0 0 0; color: #666;">
+            工作地：深圳（可远程协作）
+        </p>
+    </div>
+
+    <div style="text-align: center; margin-top: 80px; padding-top: 40px; border-top: 2px dashed var(--border-color);">
+        <h3 style="font-size: 2rem;">"The best way to predict the future is to invent it."</h3>
+        <p style="color: #888; font-family: 'Ma Shan Zheng', cursive; font-size: 1.2rem;">期待与你在 AI 时代共同创造有趣的产品 ☕️</p>
+    </div>
+
+</div>
+
+</body>
+</html>
