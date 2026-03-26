@@ -1,0 +1,6 @@
+# 简历源文件与本地文稿 — 不要进公开仓库
+*.pdf
+*.pages
+
+# macOS
+.DS_Store
