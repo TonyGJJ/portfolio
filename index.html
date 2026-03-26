@@ -3,753 +3,601 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>刘杨的数字花园 - 职业历程</title>
-    <!-- Phosphor Icons：与 Craft UI 示例页（work-journey.sunebear.com/ui）同款图标体系 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Nunito:wght@400;600;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <title>刘杨 - 前端 / 客户端负责人简历</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Patrick+Hand&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fdfbf7;
-            --text-color: #2c3e50;
-            --primary-color: #e67e22;
-            --secondary-color: #27ae60;
-            --accent-color: #8e44ad;
-            --border-color: #34495e;
-            --card-bg: #ffffff;
+            --bg: #fdfbf7;
+            --paper: #fffcf3;
+            --text: #6a3810;
+            --muted: #6e5a46;
+            --line: #8e3e03;
+            --secondary: #ffe09e;
+            --primary-soft: #fff2d0;
+            --name-color: #7b3605;
+            --shadow: 6px 6px 0 rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Nunito', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
             margin: 0;
-            padding: 40px 20px;
-            /* 纸张噪点纹理 */
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            padding: 32px 18px 56px;
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background:
+                radial-gradient(rgba(142, 62, 3, 0.14) 1px, transparent 1px),
+                radial-gradient(circle at top left, rgba(255, 224, 158, 0.45), transparent 24%),
+                radial-gradient(circle at bottom right, rgba(161, 196, 253, 0.18), transparent 18%),
+                var(--bg);
+            background-size: 24px 24px, auto, auto;
+        }
+
+        a {
+            color: inherit;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 920px;
             margin: 0 auto;
         }
 
-        /* 手写体标题 */
-        h1, h2, h3 {
-            font-family: 'Zhi Mang Xing', cursive;
-            color: var(--text-color);
-            margin-top: 0;
-            letter-spacing: 2px;
-        }
-
-        /* 顶部 Hero 区域 */
-        .hero {
-            text-align: center;
-            margin-bottom: 60px;
+        .card {
             position: relative;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-            text-shadow: 3px 3px 0px rgba(0,0,0,0.05);
-        }
-
-        .hero p.subtitle {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 1.8rem;
-            color: #555;
+            background: var(--paper);
+            border: 3px solid var(--line);
+            border-radius: 22px 26px 20px 24px / 24px 20px 26px 22px;
+            box-shadow: var(--shadow);
+            padding: 28px;
             margin-bottom: 20px;
         }
 
-        /* 手绘风卡片 (Wobble) */
-        .craft-card {
-            background: var(--card-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-            padding: 35px;
-            margin-bottom: 40px;
-            box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .craft-card:hover {
-            transform: translateY(-3px) rotate(0.5deg);
-            box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
-        }
-
-        /* 胶带效果 (Washi Tape) */
-        .washi-tape {
+        .card::before {
+            content: "";
             position: absolute;
-            width: 120px;
-            height: 30px;
-            background-color: rgba(230, 126, 34, 0.3);
-            top: -15px;
+            top: -14px;
             left: 50%;
-            transform: translateX(-50%) rotate(-3deg);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            backdrop-filter: blur(2px);
-            border: 1px dashed rgba(230, 126, 34, 0.5);
-            z-index: 10;
+            width: 112px;
+            height: 34px;
+            transform: translateX(-50%) rotate(-2deg);
+            background: rgba(255, 154, 158, 0.78);
+            border: 1px dashed rgba(106, 56, 16, 0.18);
+            box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
         }
 
-        .washi-tape.green { background-color: rgba(39, 174, 96, 0.2); border-color: rgba(39, 174, 96, 0.4); transform: translateX(-50%) rotate(2deg); }
-        .washi-tape.purple { background-color: rgba(142, 68, 173, 0.2); border-color: rgba(142, 68, 173, 0.4); transform: translateX(-50%) rotate(-1deg); }
-        .washi-tape.blue { background-color: rgba(41, 128, 185, 0.2); border-color: rgba(41, 128, 185, 0.4); transform: translateX(-50%) rotate(3deg); }
-
-        /* 高亮标注 (Notation) */
-        .highlight {
-            background: linear-gradient(104deg, rgba(255,250,150,0) 0.9%, rgba(255,250,150,1) 2.4%, rgba(255,250,150,0.5) 5.8%, rgba(255,250,150,0.1) 93%, rgba(255,250,150,0.7) 96%, rgba(255,250,150,0) 98%), linear-gradient(183deg, rgba(255,250,150,0) 0%, rgba(255,250,150,0.3) 7.9%, rgba(255,250,150,0) 15%);
-            padding: 0.2em 0.4em;
-            border-radius: 4px;
-            font-weight: bold;
+        .card:nth-of-type(2n)::before {
+            background: rgba(132, 250, 176, 0.72);
+            transform: translateX(-50%) rotate(2deg);
         }
 
-        /* 波浪线 (Squiggly Line) */
-        .squiggly {
-            text-decoration: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%23e74c3c' stroke-width='1.5' d='M0 3.5c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E");
-            background-repeat: repeat-x;
-            background-position: bottom;
-            padding-bottom: 4px;
+        .card:nth-of-type(3n)::before {
+            background: rgba(161, 196, 253, 0.72);
+            transform: translateX(-50%) rotate(-1deg);
         }
 
-        /* 历程时间轴 (Journey Timeline) */
-        .journey-timeline {
-            position: relative;
-            padding-left: 40px;
-            margin-top: 40px;
-        }
-
-        /* 手绘风垂直虚线 */
-        .journey-timeline::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background-image: linear-gradient(to bottom, var(--border-color) 50%, transparent 50%);
-            background-size: 4px 16px;
-            background-repeat: repeat-y;
-        }
-
-        .journey-node {
-            position: relative;
-            margin-bottom: 50px;
-            padding-top: 2px;
-        }
-
-        .journey-year {
-            font-family: 'Zhi Mang Xing', cursive;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-            display: inline-block;
-            border-bottom: 2px solid var(--primary-color);
-            border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-        }
-
-        .journey-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        /* 标签 */
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .tag {
-            font-size: 0.85rem;
-            padding: 4px 12px;
-            border: 1.5px solid var(--border-color);
-            border-radius: 20px 5px 20px 5px / 5px 20px 5px 20px;
-            font-weight: bold;
-            background: rgba(255,255,255,0.7);
-        }
-
-        /* 涂鸦装饰（Phosphor，与 Craft UI 演示一致的手帐点缀） */
-        .doodle {
-            position: absolute;
-            opacity: 0.55;
-            pointer-events: none;
-            color: var(--primary-color);
-            line-height: 1;
-        }
-        .doodle .ph {
-            font-size: 2.25rem;
-        }
-        .doodle-1 { right: 10%; top: 20%; transform: rotate(15deg); }
-        .doodle-2 { left: 5%; top: 40%; transform: rotate(-20deg); }
-        .doodle-3 { right: 5%; bottom: 10%; transform: rotate(10deg); }
-
-        .icon-heading {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .icon-heading .ph {
-            font-size: 2rem;
-            color: var(--primary-color);
-            flex-shrink: 0;
-        }
-
-        .tag-with-icon {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .tag-with-icon .ph {
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-
-        .contact-links .contact-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin: 0 10px;
-            color: var(--text-color);
-            font-weight: bold;
-            border-bottom: 2px dashed var(--border-color);
-            padding-bottom: 2px;
-        }
-        .contact-links .contact-item .ph {
-            font-size: 1.1rem;
-            color: var(--primary-color);
-            flex-shrink: 0;
-        }
-
-        .journey-pin {
-            position: absolute;
-            left: -44px;
-            top: 6px;
-            line-height: 1;
-            color: var(--primary-color);
-            background: var(--bg-color);
-            padding: 2px;
-            z-index: 1;
-        }
-        .journey-pin .ph-fill {
-            font-size: 1.35rem;
-        }
-
-        .subheading-icon {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .subheading-icon .ph {
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-        }
-
-        .link-row {
+        .hero {
+            padding: 36px 32px 30px;
             text-align: center;
-            margin-top: 16px;
         }
-        .link-row a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin: 6px 10px;
-            color: var(--primary-color);
+
+        .eyebrow {
+            margin: 0 0 10px;
+            font-size: 0.86rem;
             font-weight: 700;
-            text-decoration: underline;
-            text-decoration-style: wavy;
-            text-underline-offset: 4px;
-        }
-        .link-row a .ph {
-            font-size: 1.15rem;
-        }
-        .link-row a:hover {
-            color: #c0392b;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--line);
+            font-family: "Patrick Hand", cursive;
         }
 
-        .section-lead {
-            color: #555;
-            text-align: center;
-            max-width: 640px;
-            margin: 0 auto 20px;
+        h1 {
+            margin: 0;
+            font-size: clamp(2.6rem, 7vw, 4.2rem);
+            line-height: 1.05;
+            letter-spacing: 0.03em;
         }
 
-        .project-item {
-            margin-bottom: 1.35rem;
-            padding-bottom: 1.35rem;
-            border-bottom: 1px dashed rgba(52, 73, 94, 0.35);
+        .hero-title {
+            font-family: "Ma Shan Zheng", cursive;
+            font-size: clamp(3.2rem, 9vw, 5.2rem);
+            letter-spacing: 0.12em;
+            text-shadow: 3px 3px 0 rgba(142, 62, 3, 0.75);
         }
-        .project-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
+
+        .hero-char {
+            display: inline-block;
         }
-        .project-item h3 {
-            font-size: 1.35rem;
-            margin-bottom: 6px;
+
+        .hero-char + .hero-char {
+            margin-left: 0.22em;
+        }
+
+        .hero-char-1 {
+            color: var(--name-color);
+            transform: rotate(-5deg) translateY(2px);
+        }
+
+        .hero-char-2 {
+            color: var(--name-color);
+            transform: rotate(4deg) translateY(6px);
+        }
+
+        .hero-subtitle {
+            display: inline-block;
+            margin: 14px 0 18px;
+            padding: 6px 14px;
+            font-size: clamp(1.08rem, 2.8vw, 1.4rem);
+            font-weight: 700;
+            color: var(--line);
+            background: var(--secondary);
+            border: 2px solid rgba(142, 62, 3, 0.18);
+            border-radius: 7px;
+            box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
+            transform: rotate(1.5deg);
+        }
+
+        .hero-lead {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 1.03rem;
+            color: var(--muted);
+            text-align: left;
+        }
+
+        .contact-row {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 10px;
+            margin-top: 18px;
         }
-        .project-item h3 .ph {
-            font-size: 1.25rem;
-            color: var(--primary-color);
-            flex-shrink: 0;
+
+        .contact-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 2px solid var(--line);
+            background: rgba(255, 248, 220, 0.95);
+            font-size: 0.94rem;
+            color: var(--line);
+            text-decoration: none;
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.08);
         }
-        .project-meta {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 8px;
-        }
+
+        .value-grid,
+        .metric-grid,
         .two-col {
             display: grid;
             gap: 14px;
         }
-        @media (min-width: 640px) {
-            .two-col {
-                grid-template-columns: 1fr 1fr;
-                align-items: start;
-            }
+
+        .value-grid {
+            margin-top: 24px;
         }
 
-        .skill-grid {
-            display: grid;
-            gap: 22px;
-            margin-top: 8px;
+        .value-card {
+            padding: 18px;
+            border-radius: 18px 20px 16px 20px;
+            border: 2px solid var(--line);
+            background: rgba(255, 255, 255, 0.88);
+            box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
         }
-        @media (min-width: 700px) {
-            .skill-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+
+        .value-card h3,
+        .subsection-title,
+        .project-title,
+        .job-company {
+            margin: 0 0 8px;
+            font-size: 1.05rem;
         }
-        .skill-block {
-            border: 1px dashed rgba(52, 73, 94, 0.45);
-            border-radius: 12px;
-            padding: 16px 18px;
-            background: rgba(255,255,255,0.65);
+
+        .value-card:nth-child(1) {
+            transform: rotate(-1deg);
         }
-        .skill-block h3 {
-            font-size: 1.15rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+
+        .value-card:nth-child(2) {
+            transform: rotate(0.8deg);
         }
-        .skill-block h3 .ph {
-            font-size: 1.2rem;
-            color: var(--primary-color);
+
+        .value-card:nth-child(3) {
+            transform: rotate(-0.6deg);
         }
-        .skill-block ul {
+
+        .value-card p,
+        .project-note,
+        .section-intro,
+        .job-role,
+        .muted {
             margin: 0;
-            padding-left: 1.15rem;
-            font-size: 0.95rem;
-            color: #444;
-        }
-        .skill-block li {
-            margin-bottom: 6px;
-        }
-        .skill-block li:last-child {
-            margin-bottom: 0;
+            color: var(--muted);
         }
 
-        .workflow-phase {
-            margin-bottom: 22px;
-            padding-bottom: 18px;
-            border-bottom: 1px dashed rgba(52, 73, 94, 0.3);
+        .metric-grid {
+            margin-top: 16px;
         }
-        .workflow-phase:last-of-type {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
+
+        .metric {
+            padding: 16px 18px;
+            border-radius: 18px;
+            border: 2px solid var(--line);
+            background: #fff8dc;
+            box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
         }
-        .workflow-phase h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+
+        .metric strong {
+            display: block;
+            font-size: 1.5rem;
+            line-height: 1.1;
+            color: var(--line);
+            font-family: "Patrick Hand", cursive;
+            font-size: 1.8rem;
+        }
+
+        .metric span {
+            display: block;
+            margin-top: 6px;
+            font-size: 0.92rem;
+            color: var(--muted);
+        }
+
+        .section-title {
+            display: inline-block;
+            margin: 0 0 16px;
+            font-size: 2rem;
+            line-height: 1.2;
+            color: var(--line);
+            font-family: "Ma Shan Zheng", cursive;
+            letter-spacing: 0.06em;
+            border-bottom: 3px dashed rgba(142, 62, 3, 0.45);
+        }
+
+        .section-intro {
+            margin-bottom: 16px;
+            font-size: 0.98rem;
+        }
+
+        .tag-list {
             display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .workflow-phase h3 .ph {
-            color: var(--secondary-color);
-            font-size: 1.15rem;
-        }
-        .workflow-phase .phase-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            font-family: 'Nunito', sans-serif;
-            letter-spacing: 0.04em;
-            color: #fff;
-            background: var(--border-color);
-            padding: 2px 8px;
-            border-radius: 4px;
-            vertical-align: middle;
-        }
-        .workflow-phase ul {
-            margin: 8px 0 0 0;
-            padding-left: 1.15rem;
-            font-size: 0.95rem;
-            color: #444;
-        }
-        .workflow-phase li {
-            margin-bottom: 6px;
-        }
-        .workflow-note {
-            font-size: 0.88rem;
-            color: #666;
-            margin: 8px 0 0 0;
-            padding: 10px 12px;
-            background: rgba(241, 196, 15, 0.12);
-            border-radius: 8px;
-            border-left: 3px solid var(--primary-color);
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0 0 18px;
+            padding: 0;
+            list-style: none;
         }
 
+        .tag-list li {
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: var(--primary-soft);
+            color: var(--line);
+            font-size: 0.9rem;
+            font-weight: 700;
+            border: 2px solid rgba(142, 62, 3, 0.18);
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .tag-list li:nth-child(3n + 1) {
+            background: #fff1d8;
+        }
+
+        .tag-list li:nth-child(3n + 2) {
+            background: #eef8ff;
+        }
+
+        .tag-list li:nth-child(3n) {
+            background: #eefbf1;
+        }
+
+        .two-col {
+            grid-template-columns: 1fr;
+        }
+
+        .sub-block {
+            padding: 18px;
+            border-radius: 18px 22px 18px 20px;
+            border: 2px solid var(--line);
+            background: rgba(255, 255, 255, 0.82);
+            box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
+        }
+
+        .sub-block ul,
+        .project ul,
+        .job ul {
+            margin: 10px 0 0;
+            padding-left: 1.15rem;
+        }
+
+        .project,
+        .job {
+            padding: 18px;
+            border: 2px solid var(--line);
+            border-radius: 18px 22px 16px 20px;
+            background: rgba(255, 255, 255, 0.84);
+            box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
+        }
+
+        .project + .project,
+        .job + .job {
+            margin-top: 18px;
+        }
+
+        .project-header,
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: baseline;
+        }
+
+        .project-meta,
+        .job-meta {
+            font-size: 0.92rem;
+            color: var(--muted);
+        }
+
+        .job-role {
+            display: inline-block;
+            margin-top: 2px;
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--line);
+            background: rgba(255, 224, 158, 0.52);
+            padding: 2px 10px;
+            border-radius: 999px;
+        }
+
+        .footer-note {
+            margin: 28px 0 0;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        @media (min-width: 720px) {
+            .value-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .metric-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .two-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 20px 14px 40px;
+            }
+
+            .card,
+            .hero {
+                padding: 22px 18px;
+            }
+
+            .hero-title {
+                letter-spacing: 0.08em;
+            }
+
+            .hero-lead {
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <section class="card hero">
+            <p class="eyebrow">Resume / Frontend &amp; Mobile Lead</p>
+            <h1 class="hero-title"><span class="hero-char hero-char-1">刘</span><span class="hero-char hero-char-2">杨</span></h1>
+            <p class="hero-subtitle">前端 / 客户端负责人 · AI 工程化与全栈交付</p>
+            <p class="hero-lead">
+                10+ 年 iOS、React Native 与前端开发经验，带过 7-10 人团队，做过从 0 到 1 的业务搭建，也扛过高压业务的稳定性和交付节奏。近一年重点把 AI 真正落到团队协作里：不只会用 Cursor / Claude，还能通过自研 MCP Server 把设计、文档和内部接口接入工程工作流。
+            </p>
 
-<div class="doodle doodle-1" aria-hidden="true"><i class="ph ph-rocket-launch"></i></div>
-<div class="doodle doodle-2" aria-hidden="true"><i class="ph ph-lightbulb"></i></div>
-<div class="doodle doodle-3" aria-hidden="true"><i class="ph ph-sparkle"></i></div>
+            <div class="contact-row">
+                <span class="contact-chip">深圳 · 南山区</span>
+                <a class="contact-chip" href="tel:18617150402">18617150402</a>
+                <a class="contact-chip" href="mailto:liuyang86247683@sina.com">liuyang86247683@sina.com</a>
+                <a class="contact-chip" href="https://github.com/TonyGJJ" target="_blank" rel="noopener noreferrer">GitHub @TonyGJJ</a>
+            </div>
 
-<div class="container">
-    
-    <!-- Hero 区域 -->
-    <div class="hero">
-        <h1>刘 杨</h1>
-        <p class="subtitle">十余年客户端与前端 ➔ AI 赋能的全栈交付</p>
-        <p style="max-width: 640px; margin: 0 auto 14px; font-size: 1.1rem;">
-            你好，我是刘杨。做过多年 <strong>iOS 原生</strong>与<strong>React Native 跨端</strong>，带过 <strong>7～10 人</strong>的前端 / App 团队，经历过多个 <span class="highlight">从 0 到 1</span> 的产品落地。现在把日常开发重心放在 <strong>AI 辅助工程化</strong>：用 Cursor / Claude 提速交付；并基于 <strong>MCP</strong> 把设计稿、文档和业务接口接到模型上下文里——其中包括我<strong>自研、已投入使用的 MCP Server</strong>，而不仅是接入第三方现成服务。
-        </p>
-        <p style="max-width: 640px; margin: 0 auto; font-size: 1.05rem; color: #555;">
-            我擅长在<strong>业务压力大、迭代频繁</strong>的环境里稳住架构与质量：规范、组件化、监控与性能优化都做过一线落地。若你在找能<strong>带队也能动手</strong>、愿意用新工具把团队效率抬一档的人，欢迎往下翻翻具体项目与数据。
-        </p>
-        <div class="contact-links" style="margin-top: 20px;">
-            <span class="contact-item"><i class="ph ph-envelope-simple" aria-hidden="true"></i> liuyang86247683@sina.com</span>
-            <span class="contact-item"><i class="ph ph-phone" aria-hidden="true"></i> 18617150402</span>
-            <span class="contact-item"><i class="ph ph-map-pin" aria-hidden="true"></i> 深圳·南山区</span>
-        </div>
-        <div class="link-row">
-            <a href="https://github.com/TonyGJJ" target="_blank" rel="noopener noreferrer"><i class="ph ph-github-logo" aria-hidden="true"></i> GitHub @TonyGJJ</a>
-        </div>
-    </div>
+            <div class="value-grid">
+                <div class="value-card">
+                    <h3>1. 带队也能下场</h3>
+                    <p>带过 7-10 人前端 / App 团队，能做排期、拆任务、压风险，也能自己写核心模块和处理线上问题。</p>
+                </div>
+                <div class="value-card">
+                    <h3>2. 扛过高压业务</h3>
+                    <p>做过高日活和高业务压力项目，关心的不只是把功能做出来，还包括稳定性、性能、监控与交付节奏。</p>
+                </div>
+                <div class="value-card">
+                    <h3>3. 会把 AI 变成团队能力</h3>
+                    <p>不仅会使用 AI 编程工具，还能自研 MCP Server，把文档、设计与内部能力接入模型，减少信息摩擦和返工。</p>
+                </div>
+            </div>
 
-    <!-- 核心技能卡片 -->
-    <div class="craft-card">
-        <div class="washi-tape"></div>
-        <h2 class="icon-heading" style="font-size: 2.2rem; text-align: center;"><i class="ph ph-wrench" aria-hidden="true"></i><span>当前技能栈 (Arsenal)</span></h2>
-        <p style="text-align: center; color: #666; margin-bottom: 20px;">不再局限于特定语言，而是用 AI 赋能全栈</p>
-        
-        <div class="tags" style="justify-content: center;">
-            <span class="tag tag-with-icon" style="background: #e8f4f8; border-color: #3498db; color: #2980b9;"><i class="ph ph-robot" aria-hidden="true"></i> Cursor / Claude</span>
-            <span class="tag tag-with-icon" style="background: #e8f4f8; border-color: #3498db; color: #2980b9;"><i class="ph ph-plug" aria-hidden="true"></i> 自研 MCP Server</span>
-            <span class="tag tag-with-icon" style="background: #e8f4f8; border-color: #3498db; color: #2980b9;"><i class="ph ph-brain" aria-hidden="true"></i> Agent / Skills</span>
-            <span class="tag tag-with-icon" style="background: #fcf3cf; border-color: #f1c40f; color: #d4ac0d;"><i class="ph ph-atom" aria-hidden="true"></i> React / RN / TS</span>
-            <span class="tag tag-with-icon" style="background: #fcf3cf; border-color: #f1c40f; color: #d4ac0d;"><i class="ph ph-devices" aria-hidden="true"></i> 小程序</span>
-            <span class="tag tag-with-icon" style="background: #eafaf1; border-color: #2ecc71; color: #27ae60;"><i class="ph ph-code" aria-hidden="true"></i> Node / Python</span>
-            <span class="tag tag-with-icon" style="background: #f9ebea; border-color: #e74c3c; color: #c0392b;"><i class="ph ph-apple-logo" aria-hidden="true"></i> iOS 原生</span>
-            <span class="tag tag-with-icon" style="background: #f5eef8; border-color: #8e44ad; color: #6c3483;"><i class="ph ph-git-branch" aria-hidden="true"></i> Git / 规范 / 监控</span>
-        </div>
+            <div class="metric-grid">
+                <div class="metric">
+                    <strong>10+ 年</strong>
+                    <span>客户端 / 前端开发经验</span>
+                </div>
+                <div class="metric">
+                    <strong>7-10 人</strong>
+                    <span>前端 / App 团队管理经验</span>
+                </div>
+                <div class="metric">
+                    <strong>12 万</strong>
+                    <span>代表项目日活规模</span>
+                </div>
+                <div class="metric">
+                    <strong>0.06%</strong>
+                    <span>代表项目崩溃率</span>
+                </div>
+            </div>
+        </section>
 
-        <div class="skill-grid">
-            <div class="skill-block">
-                <h3><i class="ph ph-robot" aria-hidden="true"></i><span>AI 与工具链（怎么用得稳）</span></h3>
+        <section class="card">
+            <h2 class="section-title">核心能力</h2>
+
+            <ul class="tag-list">
+                <li>iOS / Objective-C / Swift</li>
+                <li>React Native / TypeScript</li>
+                <li>React / Web 前端</li>
+                <li>小程序</li>
+                <li>架构与性能优化</li>
+                <li>团队管理</li>
+                <li>AI 工程化</li>
+                <li>自研 MCP Server</li>
+            </ul>
+
+            <div class="two-col">
+                <div class="sub-block">
+                    <h3 class="subsection-title">我最擅长的事</h3>
+                    <ul>
+                        <li>从 0 到 1 搭建客户端 / 前端项目骨架，做模块分层、规范约束和发布流程。</li>
+                        <li>在高业务压力环境下做稳定性、性能和监控治理，尽量把交付变成可预测的结果。</li>
+                        <li>与产品、设计、后端、测试协作，把需求拆到可落地、可验收、可回滚。</li>
+                    </ul>
+                </div>
+                <div class="sub-block">
+                    <h3 class="subsection-title">AI 工程化与工具落地</h3>
+                    <ul>
+                        <li>把 Cursor、Claude、Prompt 模板和团队约定结合起来，而不是只停留在个人提效。</li>
+                        <li>自研并落地 MCP Server，承接查设计、查文档、查内部接口等高频动作。</li>
+                        <li>能用 Node / Python 补工具链能力，让 AI 辅助开发更稳、更可复盘。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title">代表项目</h2>
+
+            <div class="project">
+                <div class="project-header">
+                    <h3 class="project-title">闪回门店系统</h3>
+                    <div class="project-meta">React Native · TypeScript · 企业分发</div>
+                </div>
                 <ul>
-                    <li><strong>Cursor：</strong> Agent / Composer、Project Rules（项目约定、目录禁区、命名风格）、<code>@</code> 单文件与多文件引用、与终端/测试脚本配合。</li>
-                    <li><strong>Claude：</strong> 长文档与方案对比（技术选型、接口评审稿、CHANGELOG 草稿）；适合「先想清楚再动刀」的阶段。</li>
-                    <li><strong>MCP（使用 + 自研）：</strong> 熟悉 resources / tools / prompts 的分工与客户端（Cursor / Claude 等）的加载方式；能按需接 Figma、OpenAPI、内部文档、只读数据面。</li>
-                    <li><strong>自研 MCP Server（已实践）：</strong> 从真实痛点定义 tool 能力边界；设计清晰的入参 JSON Schema、统一错误模型与超时；支持 stdio / 远程等部署形态；对敏感操作做鉴权、白名单与审计日志，避免模型「误调用」。</li>
-                    <li><strong>Prompt：</strong> 固定输出结构（目标 / 假设 / 改动清单 / 风险）；复杂需求先「只输出计划与文件列表」，再分步改代码。</li>
+                    <li>负责员工审核、个人中心、消息中心以及与原生通信的封装，参与核心业务链路迭代。</li>
+                    <li>项目承载线下回收约 80% 额度，简历口径季度约 2 亿 RMB，日活约 12 万。</li>
+                    <li>配合监控与治理手段，将崩溃率控制在约 0.06%。</li>
                 </ul>
             </div>
-            <div class="skill-block">
-                <h3><i class="ph ph-atom" aria-hidden="true"></i><span>前端与客户端（主力战场）</span></h3>
+
+            <div class="project">
+                <div class="project-header">
+                    <h3 class="project-title">自研 MCP Server（内部落地）</h3>
+                    <div class="project-meta">MCP · Cursor / Claude · 鉴权与审计</div>
+                </div>
                 <ul>
-                    <li><strong>跨端：</strong> React Native + TypeScript；小程序业务与发布链路；与原生 SDK（推送、登录、支付、客服）桥接与统一封装。</li>
-                    <li><strong>Web：</strong> React / Next.js 常用模式；组件化、路由与数据获取分层；配合 Tailwind / 手写 CSS 做落地页与运营页。</li>
-                    <li><strong>iOS：</strong> Objective-C / Swift 混合维护；Runtime、RunLoop、Auto Layout；存储（Core Data / FMDB / Realm）与迁移经验。</li>
-                    <li><strong>体验与性能：</strong> 列表与地图等重场景渲染优化、包体与启动、崩溃与 ANR/卡顿治理（配合监控平台）。</li>
+                    <li>把文档、设计和内部接口能力做成结构化 tools，减少上下文复制粘贴和版本不一致。</li>
+                    <li>区分只读与写能力，补上 schema、错误模型、白名单和调用日志，避免模型误调用。</li>
+                    <li>源码与 tool 名涉及内部业务，公开展示以架构与方法论为主，可在面试中脱敏说明。</li>
                 </ul>
             </div>
-            <div class="skill-block">
-                <h3><i class="ph ph-wrench" aria-hidden="true"></i><span>工程化与质量</span></h3>
+
+            <div class="project">
+                <div class="project-header">
+                    <h3 class="project-title">至优出行</h3>
+                    <div class="project-meta">Objective-C / Swift · 地图 · 订单与支付</div>
+                </div>
                 <ul>
-                    <li>架构与模式：MVC / MVVM、模块化边界、网络层与错误码约定。</li>
-                    <li>GitFlow / 分支与发布节奏；Code Review 清单（可读性、边界情况、回滚）。</li>
-                    <li>监控与运维协作：崩溃率、关键埋点、灰度与热修配合（视平台能力）。</li>
-                    <li>在 AI 辅助下补齐脚本侧能力：Node / Python 写工具链（生成代码、校验配置、批处理），不替代线上核心逻辑审查。</li>
-                    <li><strong>自研 MCP Server</strong> 常见实现栈：TypeScript / Node（或团队统一技术栈）+ 清晰分层（协议适配、业务 tool、外部系统网关），便于单测与 CI。</li>
+                    <li>主导 iOS 端架构与核心模块重构，覆盖首页、用户、订单、网络、支付等关键模块。</li>
+                    <li>优化首页地图网点渲染逻辑后，整体体验提升约 20%；资源整理后安装包减小约 5MB。</li>
                 </ul>
             </div>
-            <div class="skill-block">
-                <h3><i class="ph ph-users-three" aria-hidden="true"></i><span>协作与带队（软技能）</span></h3>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title">工作经历</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <h3 class="job-company">AI 工程化实践与内部工具落地</h3>
+                        <p class="job-role">个人 / 团队实践方向</p>
+                    </div>
+                    <div class="job-meta">2024 - 至今</div>
+                </div>
                 <ul>
-                    <li>带过 <strong>7～10 人</strong>前端 / App 团队：排期、任务拆分、风险向上同步。</li>
-                    <li>推动规范落地：编码规范、组件库与脚手架、周会技术分享与事故复盘。</li>
-                    <li>与产品、设计、后端、测试对齐验收标准；在高压迭代里保「可预测的交付」。</li>
-                    <li>在团队内推广 AI 工具：统一提示词模板、目录约定与「哪些代码必须人审」的红线。</li>
-                    <li><strong>自研 MCP：</strong> 把 Server 的用途、tool 列表、鉴权方式写成团队可维护文档，方便他人加 tool，而不是「只有我会调」。</li>
+                    <li>把日常开发重心逐步迁移到 AI 辅助工程化，沉淀从需求理解、计划生成到代码合入的工作流。</li>
+                    <li>补齐 Node / Python 脚本和 MCP 能力，目标是减少返工、控制 diff、让团队协作更顺。</li>
                 </ul>
             </div>
-        </div>
-    </div>
 
-    <div class="craft-card">
-        <div class="washi-tape blue"></div>
-        <h2 class="icon-heading" style="font-size: 2.1rem; text-align: center;"><i class="ph ph-crosshair" aria-hidden="true"></i><span>我能带来什么</span></h2>
-        <p class="section-lead">不是堆关键词，而是这几类事我反复做过、且能讲清楚怎么做。</p>
-        <div class="two-col">
-            <div>
-                <h3 class="subheading-icon" style="font-size: 1.25rem; margin-bottom: 8px;"><i class="ph ph-package" aria-hidden="true"></i><span>产品与交付</span></h3>
-                <ul style="margin: 0; padding-left: 1.2rem;">
-                    <li>从 0 搭建 RN / 小程序多端骨架，沉淀通用模块与发布流程。</li>
-                    <li>在<strong>高 DAU</strong>场景下做崩溃与性能治理（监控、埋点、灰度）。</li>
-                    <li>和原生、后端、运维协同，推动需求拆分到可验收的里程碑。</li>
-                    <li>把 <strong>AI 可用的能力</strong>产品化：<strong>自研 MCP</strong> 承接「查文档、对齐设计、跑安全脚本」等高频动作，让交付节奏不被信息摩擦拖慢。</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="subheading-icon" style="font-size: 1.25rem; margin-bottom: 8px;"><i class="ph ph-users-three" aria-hidden="true"></i><span>团队与工程化</span></h3>
-                <ul style="margin: 0; padding-left: 1.2rem;">
-                    <li>制定并落地代码规范、分支策略（GitFlow）与 Code Review 习惯。</li>
-                    <li>组件库 / 业务模块分层，减少复制粘贴与联调成本。</li>
-                    <li>引入 AI 工具链：提示词模板、Skills、以及<strong>自研 MCP</strong> 把内部系统能力暴露给模型，减少复制粘贴与信息断层。</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="craft-card">
-        <div class="washi-tape purple"></div>
-        <h2 class="icon-heading" style="font-size: 2.1rem; text-align: center;"><i class="ph ph-push-pin" aria-hidden="true"></i><span>代表项目精选</span></h2>
-        <p class="section-lead">以下均为真实业务背景下的职责与结果（数据来自当时业务口径，仅供能力佐证）。<strong>自研 MCP</strong> 多为内部基础设施，通常不便开源，面试或合作时可脱敏介绍架构与 tool 设计。</p>
-
-        <div class="project-item">
-            <h3><i class="ph ph-storefront" aria-hidden="true"></i><span>闪回门店系统</span></h3>
-            <p class="project-meta">React Native · TypeScript · 极光推送 / 微信登录与支付 / 七鱼客服 · ABM 企业分发</p>
-            <ul style="margin: 0; padding-left: 1.2rem;">
-                <li>面向全国手机门店的估价与回收一站式 App，负责<strong>员工审核、个人中心、消息中心</strong>及与原生通信封装。</li>
-                <li>业务侧：承载线下回收约 <strong>80%</strong> 额度（简历口径：季度约 <strong>2 亿 RMB</strong>），日活约 <strong>12 万</strong>。</li>
-                <li>质量侧：借助阿里云 EMAS 等监控，崩溃率约 <strong>0.06%</strong>。</li>
-            </ul>
-        </div>
-
-        <div class="project-item">
-            <h3><i class="ph ph-shopping-bag" aria-hidden="true"></i><span>闪回有品</span></h3>
-            <p class="project-meta">React Native · TypeScript · 多端适配与基础能力建设</p>
-            <ul style="margin: 0; padding-left: 1.2rem;">
-                <li>C 端二手销售链路，负责<strong>基础框架、人员协调、通用库封装</strong>及 iOS / Android 差异处理。</li>
-                <li>多轮迭代中保持交付节奏，简历口径：<strong>半年内十余次迭代未出现整体延期</strong>。</li>
-            </ul>
-        </div>
-
-        <div class="project-item">
-            <h3><i class="ph ph-car" aria-hidden="true"></i><span>至优出行</span></h3>
-            <p class="project-meta">Objective-C / Swift · 百度地图 · OSS · 支付与订单</p>
-            <ul style="margin: 0; padding-left: 1.2rem;">
-                <li>新能源出行与零售双核平台，主导 iOS 端<strong>架构与核心模块重构</strong>（首页、用户、订单、网络、支付等）。</li>
-                <li>性能与包体：资源整理与代码优化后安装包约 <strong>-5MB</strong>；地图网点渲染优化后整体体验约 <strong>+20%</strong>（简历口径）。</li>
-            </ul>
-        </div>
-
-        <div class="project-item">
-            <h3><i class="ph ph-waves" aria-hidden="true"></i><span>智能香薰机（海外）</span></h3>
-            <p class="project-meta">Objective-C · BLE · DLNA · GCDAsyncSocket · 本地 WebService</p>
-            <ul style="margin: 0; padding-left: 1.2rem;">
-                <li>独立负责 iOS 端全功能：蓝牙连接、Socket 控制、DLNA 音乐播放；本地起 WebService 作为 DLNA Service 端。</li>
-                <li>为 Android 侧封装网络模块，保证双端协议与联调一致。</li>
-            </ul>
-        </div>
-
-        <div class="project-item">
-            <h3><i class="ph ph-plug" aria-hidden="true"></i><span>自研 MCP Server（内部落地）</span></h3>
-            <p class="project-meta">Model Context Protocol · Tools / Resources · Cursor &amp; Claude 客户端 · 鉴权与审计</p>
-            <ul style="margin: 0; padding-left: 1.2rem;">
-                <li>从团队真实协作痛点出发，把「反复要查、又容易贴错」的信息做成<strong>结构化 tools</strong>（入参 schema、错误码、超时策略），而不是让模型靠猜。</li>
-                <li>与日常开发流结合：文档 / 设计 / 内部接口说明等通过 MCP 拉取，减少上下文复制粘贴与版本不一致。</li>
-                <li>工程上区分<strong>只读与写能力</strong>，敏感路径走白名单与调用日志；与客户端（stdio / SSE 等）联调并文档化，方便同事扩展新 tool。</li>
-            </ul>
-            <p style="margin: 12px 0 0 0; font-size: 0.9rem; color: #777;">源码与 tool 名涉及公司业务，公开展示以口述与架构图为主；若需可配合签 NDA 后演示。</p>
-        </div>
-
-        <div class="project-item">
-            <h3><i class="ph ph-git-branch" aria-hidden="true"></i><span>开源：数据库性能对比 Demo</span></h3>
-            <p class="project-meta">Core Data · FMDB · Realm</p>
-            <p style="margin: 0;">早年做过三类存储方案的对比实验，代码托管在 GitHub，便于同行参考与讨论。</p>
-            <p style="margin: 10px 0 0 0;"><a href="https://github.com/TonyGJJ/DataBasePKDemo" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); font-weight: 700; display: inline-flex; align-items: center; gap: 6px;"><i class="ph ph-arrow-square-out" aria-hidden="true"></i> TonyGJJ/DataBasePKDemo</a></p>
-        </div>
-    </div>
-
-    <div class="craft-card">
-        <div class="washi-tape green"></div>
-        <h2 class="icon-heading" style="font-size: 2.1rem; text-align: center;"><i class="ph ph-cpu" aria-hidden="true"></i><span>AI 工作流（从需求到合入）</span></h2>
-        <p class="section-lead">下面是我日常<strong>可重复执行</strong>的一套节奏：目标不是「让 AI 写更多」，而是<strong>减少返工、可控 diff、可复盘</strong>。工具名可换，顺序建议保留。</p>
-
-        <div class="workflow-phase">
-            <h3><span class="phase-tag">01</span><i class="ph ph-folders" aria-hidden="true"></i><span>开工前：把上下文「喂对」</span></h3>
-            <ul>
-                <li>仓库里维护可读入口：<strong>README / AGENTS.md（或等价）</strong>——如何安装、如何启动、常用命令、目录职责、禁止改动的路径。</li>
-                <li>大需求前先限定阅读范围：让模型列出将涉及的<strong>文件清单</strong>，确认无误再改，避免「全仓库乱扫」。</li>
-                <li>需要设计或接口事实时，优先 <strong>MCP / 链接到单一事实源</strong>（Figma 节点、OpenAPI、Confluence/飞书文档），而不是粘贴半截截图。</li>
-                <li>团队有<strong>自研 MCP</strong>时，在 README 或运维小抄里固定写清：<strong>如何启用</strong>、当前暴露了哪些 tool、各 tool 的用途与示例入参（不含密钥）；新人按文档即可接客户端。</li>
-            </ul>
-        </div>
-
-        <div class="workflow-phase">
-            <h3><span class="phase-tag">02</span><i class="ph ph-list-checks" aria-hidden="true"></i><span>需求进场：先结构化，再写代码</span></h3>
-            <ul>
-                <li>把 PRD 压成固定段落：<strong>目标 / 非目标 / 用户路径 / 接口契约 / 边界与异常 / 验收步骤（可点击路径）</strong>。</li>
-                <li>拆成<strong>可独立合并</strong>的子任务：每个子任务对应明确的文件或模块边界，避免一个 PR 改 30 个无关文件。</li>
-                <li>先产出「实现计划」：<strong>改动点列表 → 风险点 → 回滚方式</strong>；复杂逻辑计划通过后再允许动代码。</li>
-            </ul>
-        </div>
-
-        <div class="workflow-phase">
-            <h3><span class="phase-tag">03</span><i class="ph ph-code" aria-hidden="true"></i><span>编码循环：小步、可 diff、可验证</span></h3>
-            <ul>
-                <li>使用 <code>@文件</code> / 选中片段限定编辑范围；要求模型给出<strong>变更摘要</strong>（改了什么、为什么、影响面）。</li>
-                <li>默认<strong>小步提交</strong>：一个逻辑点一次 commit，方便 bisect 与 Code Review。</li>
-                <li>生成后本地跑<strong>类型检查 / Lint / 关键单测或冒烟路径</strong>；RN/小程序再跑真机或模拟器关键路径。</li>
-                <li>重构类任务：先补<strong>行为不变的测试或录屏路径</strong>，再让 AI 协助搬代码，避免 silent break。</li>
-            </ul>
-        </div>
-
-        <div class="workflow-phase">
-            <h3><span class="phase-tag">04</span><i class="ph ph-shield-check" aria-hidden="true"></i><span>红线：这些默认不交给模型「一次生成完」</span></h3>
-            <ul>
-                <li><strong>安全与钱：</strong> 鉴权、支付、金额计算、优惠券叠加、敏感个人信息（PII）。</li>
-                <li><strong>数据与并发：</strong> 事务边界、幂等、分布式锁、复杂 SQL / 迁移脚本。</li>
-                <li><strong>密钥：</strong> 永不写入仓库；环境变量名可讨论，值不进对话、不进日志。</li>
-            </ul>
-            <p class="workflow-note">做法是：模型可以写草稿或测试环境脚本，但<strong>合入前必须人工对照业务规则逐条过一遍</strong>，必要时补单测或双人复核。</p>
-        </div>
-
-        <div class="workflow-phase">
-            <h3><span class="phase-tag">05</span><i class="ph ph-plug" aria-hidden="true"></i><span>MCP：选型、接入与自研（我有一套 checklist）</span></h3>
-            <ul>
-                <li>先问「这条信息是否<strong>经常变</strong>」：常变的用 MCP 或文档深链；一次性的只贴最小片段，避免把整库上下文撑爆。</li>
-                <li>工具分层：<strong>只读优先</strong>（查设计、查文档、查 schema）；写操作必须可撤销或有二次确认，并保留调用记录便于复盘。</li>
-                <li><strong>自研 Server（我做过落地）：</strong> 先写「工具说明书」再给模型用——每个 tool 的名称、用途、入参示例、失败时返回什么；实现上与客户端联调通 stdio/SSE，线上再配限流与密钥轮转。</li>
-                <li>自研时额外注意：<strong>最小权限</strong>（按角色暴露 tool）、<strong>可观测</strong>（延迟、错误率）、<strong>版本化</strong>（tool schema 变更可灰度），避免团队里「同一个 MCP 各用各的方言」。</li>
-            </ul>
-        </div>
-
-        <div class="workflow-phase">
-            <h3><span class="phase-tag">06</span><i class="ph ph-users-three" aria-hidden="true"></i><span>团队落地：让效率变成集体资产</span></h3>
-            <ul>
-                <li>沉淀<strong>Skills / 提示词模板</strong>：Code Review、写测试、写发布说明、接口联调 checklist。</li>
-                <li>统一「AI 辅助」约定：分支命名、commit message、哪些目录允许 Agent 自动改、哪些必须手写 PR 描述。</li>
-                <li>周会可加 10 分钟：<strong>本周省时的用法 / 翻车的案例</strong>，避免每人一套野路子。</li>
-            </ul>
-        </div>
-    </div>
-
-    <h2 class="icon-heading" style="font-size: 2.8rem; text-align: center; margin-top: 60px; margin-bottom: 30px;"><i class="ph ph-map-trifold" aria-hidden="true"></i><span>我的职业历程 (Journey)</span></h2>
-
-    <div class="journey-timeline">
-        
-        <!-- 阶段 4：AI 全栈时代 -->
-        <div class="journey-node">
-            <span class="journey-pin" aria-hidden="true"><i class="ph-fill ph-map-pin"></i></span>
-            <div class="craft-card" style="margin-bottom: 0;">
-                <div class="washi-tape purple"></div>
-                <div class="journey-year">2024 - 至今</div>
-                <div class="journey-title">觉醒：AI 全栈与智能体指挥官</div>
-                <p>随着大模型的爆发，我意识到编程的范式正在发生根本性改变。我开始将工作流全面迁移至 <span class="highlight">Cursor 和 Claude</span>。</p>
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <h3 class="job-company">深圳闪回科技</h3>
+                        <p class="job-role">前端组长</p>
+                    </div>
+                    <div class="job-meta">2021 - 2024</div>
+                </div>
                 <ul>
-                    <li><strong>突破边界：</strong> 从纯前端/客户端，借助 AI 的力量快速拓展至 Node.js、Python 等后端领域，实现真正的全栈独立开发。</li>
-                    <li><strong>自研 MCP Server（已落地）：</strong> 基于 <span class="squiggly">Model Context Protocol</span> 实现团队自用 Server，将内部文档、设计协作、脚本与业务工具以标准 tools/resources 暴露给 Cursor / Claude；注重 schema、鉴权与审计，而不是「一把梭全开放」。</li>
-                    <li><strong>团队赋能：</strong> 在团队内推行 AI 辅助编程规范，将日常开发效率提升数倍。</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 阶段 3：前端架构与团队管理 -->
-        <div class="journey-node">
-            <span class="journey-pin" aria-hidden="true"><i class="ph-fill ph-map-pin"></i></span>
-            <div class="craft-card" style="margin-bottom: 0;">
-                <div class="washi-tape green"></div>
-                <div class="journey-year">2021 - 2024</div>
-                <div class="journey-title">深耕：前端组长 @ 深圳闪回科技</div>
-                <p>承担公司所有 App 和小程序的架构建设，作为一级部门负责人，管理 7 人前端团队。</p>
-                <ul>
-                    <li>主导开发「闪回门店系统」，使用 <strong>React Native + TypeScript</strong>，承载公司线下 80% 的回收额度（平均季度 2 亿 RMB），日活 12 万，崩溃率控制在 0.06%。</li>
+                    <li>承担公司 App 和小程序架构建设，管理 7 人前端团队，负责排期、协作和质量把控。</li>
                     <li>负责 4 个 App 和 5 个小程序的从 0 到 1 架构设计、通用组件抽离与性能优化。</li>
-                    <li>制定前端代码规范，组织技术分享，建立完善的工程化体系。</li>
+                    <li>制定代码规范、组织技术分享，推动工程化体系逐步成型。</li>
                 </ul>
             </div>
-        </div>
 
-        <!-- 阶段 2：跨平台与性能优化 -->
-        <div class="journey-node">
-            <span class="journey-pin" aria-hidden="true"><i class="ph-fill ph-map-pin"></i></span>
-            <div class="craft-card" style="margin-bottom: 0;">
-                <div class="washi-tape blue"></div>
-                <div class="journey-year">2019 - 2021</div>
-                <div class="journey-title">蜕变：App组长 @ 联合信通</div>
-                <p>从单纯的执行者向架构设计和团队管理转型。负责「至优出行」（新能源智慧出行平台）的 iOS 端架构重构。</p>
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <h3 class="job-company">联合信通</h3>
+                        <p class="job-role">App 组长</p>
+                    </div>
+                    <div class="job-meta">2019 - 2021</div>
+                </div>
                 <ul>
-                    <li>使用 Objective-C + Swift 混合开发，重构首页、用户、订单、支付等核心模块。</li>
-                    <li>深度优化性能：通过修改首页地图网点渲染逻辑，<span class="squiggly">使整体性能提升 20%</span>；优化资源库使安装包减小 5MB。</li>
-                    <li>带领 10 人 App 团队，把控项目进度与代码质量。</li>
+                    <li>负责“至优出行” iOS 端架构重构，从执行者转向架构设计与团队管理角色。</li>
+                    <li>带领 10 人 App 团队，把控项目进度与代码质量，推进性能优化和核心模块改造。</li>
                 </ul>
             </div>
-        </div>
 
-        <!-- 阶段 1：iOS 原生基石 -->
-        <div class="journey-node">
-            <span class="journey-pin" aria-hidden="true"><i class="ph-fill ph-map-pin"></i></span>
-            <div class="craft-card" style="margin-bottom: 0;">
-                <div class="washi-tape"></div>
-                <div class="journey-year">2013 - 2018</div>
-                <div class="journey-title">基石：iOS 开发老兵</div>
-                <p>职业生涯的前 5 年，我扎根于 iOS 原生开发，积累了深厚的底层技术功底。</p>
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <h3 class="job-company">早期 iOS 开发经历</h3>
+                        <p class="job-role">汉资投资 / 广田云万家 / 科蓝软件 / 盛世行云</p>
+                    </div>
+                    <div class="job-meta">2013 - 2018</div>
+                </div>
                 <ul>
-                    <li><strong>汉资投资 (2017-2018)：</strong> 独立完成海外智能香薰机项目，深入研究 BLE 蓝牙通信、DLNA 协议、GCDAsyncSocket。甚至在本地开启 WebService 服务器作为 DLNA Service 端。</li>
-                    <li><strong>盛世行云 (2013-2014)：</strong> 独自维护公司既有全部项目，按需求迭代与修障，练就「一人多项目」的排障与交付能力。</li>
-                    <li><strong>科蓝软件 / 平安银行外包 (2014)：</strong> 多个银行类 App 日常开发与维护，负责上架流程，熟悉合规与发版节奏。</li>
-                    <li><strong>广田云万家 (2014 - 2017)：</strong> 业务模块开发；做过 CoreData、FMDB、Realm 的性能对比，并开源 Demo（见上方代表项目）。</li>
+                    <li>长期扎根 iOS 原生开发，积累了蓝牙、Socket、DLNA、存储方案对比和多项目维护经验。</li>
+                    <li>做过海外智能香薰机项目，也做过银行类 App 维护、上架与合规配合。</li>
                 </ul>
             </div>
-        </div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title">教育与补充</h2>
+            <div class="two-col">
+                <div class="sub-block">
+                    <h3 class="subsection-title">教育背景</h3>
+                    <p class="muted">本科 · 物联网工程</p>
+                </div>
+                <div class="sub-block">
+                    <h3 class="subsection-title">补充信息</h3>
+                    <ul>
+                        <li>英语读写可满足技术文档与日常协作。</li>
+                        <li>工作地深圳，可远程协作。</li>
+                        <li>可接受全职机会、外包合作与技术交流。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
     </div>
-
-    <div class="craft-card">
-        <div class="washi-tape blue"></div>
-        <h2 class="icon-heading" style="font-size: 2.1rem; text-align: center;"><i class="ph ph-graduation-cap" aria-hidden="true"></i><span>教育与其他</span></h2>
-        <p style="text-align: center; margin-bottom: 0;"><strong>本科</strong> · 物联网工程</p>
-        <p style="text-align: center; color: #666; margin-top: 8px;">英语读写可满足技术文档与日常协作（如需可提供详细说明）。</p>
-    </div>
-
-    <div class="craft-card">
-        <div class="washi-tape"></div>
-        <h2 class="icon-heading" style="font-size: 2.1rem; text-align: center;"><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i><span>联系我 (Contact)</span></h2>
-        <p style="text-align: center; margin-bottom: 10px;">
-            期待全职机会、外包合作、技术交流，欢迎随时联系。
-        </p>
-        <p style="text-align: center; margin: 0;">
-            <strong>电话：</strong>18617150402 | <strong>邮箱：</strong>liuyang86247683@sina.com
-        </p>
-        <p style="text-align: center; margin: 6px 0 0 0; color: #666;">
-            工作地：深圳（可远程协作）
-        </p>
-    </div>
-
-    <div style="text-align: center; margin-top: 80px; padding-top: 40px; border-top: 2px dashed var(--border-color);">
-        <h3 style="font-size: 2rem;">"The best way to predict the future is to invent it."</h3>
-        <p style="color: #888; font-family: 'Ma Shan Zheng', cursive; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;"><span>期待与你在 AI 时代共同创造有趣的产品</span><i class="ph ph-coffee" style="font-size: 1.35rem; color: var(--primary-color);" aria-hidden="true"></i></p>
-    </div>
-
-</div>
-
 </body>
 </html>
